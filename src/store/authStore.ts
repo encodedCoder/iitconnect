@@ -3,6 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { authService } from "../services/auth";
 
+// src/store/authStore.ts
 interface AuthState {
   user: any | null;
   token: string | null;
@@ -10,6 +11,8 @@ interface AuthState {
   error: string | null;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
+  register: (email: string, password: string, name: string) => Promise<void>;
+  updateProfile: (data: any) => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>()(

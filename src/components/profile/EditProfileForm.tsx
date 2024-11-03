@@ -35,13 +35,19 @@ export const EditProfileForm: React.FC<EditProfileFormProps> = ({
     },
   });
 
-  const onSubmit = async (data: EditProfileFormData) => {
-    try {
-      // Handle profile update API call here
-      onClose();
-    } catch (error) {
-      console.error("Failed to update profile:", error);
-    }
+  // const onSubmit = async (data: EditProfileFormData) => {
+  //   try {
+  //     // Handle profile update API call here
+  //     onClose();
+  //   } catch (error) {
+  //     console.error("Failed to update profile:", error);
+  //   }
+  // };
+
+  // src/components/profile/EditProfileForm.tsx
+  const onSubmit = async () => {
+    // Handle profile update API call here
+    onClose();
   };
 
   return (

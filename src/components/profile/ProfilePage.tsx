@@ -11,15 +11,18 @@ export const ProfilePage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
   const currentUser = useAuthStore((state) => state.user);
 
+  // src/components/profile/ProfilePage.tsx
+  // src/pages/Profile.tsx
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", userId],
     queryFn: async () => {
-      // Fetch profile data from API
       return {
-        id: userId,
+        id: userId || "",
         name: "Test User",
-        followersCount: 0,
-        followingCount: 0,
+        bio: "This is a test bio",
+        followersCount: 100,
+        followingCount: 50,
+        isFollowing: false,
       };
     },
   });

@@ -25,7 +25,8 @@ const Profile = () => {
   });
 
   if (isLoading) return <Spinner />;
-  if (!profile) return <div>Profile not found</div>;
+  // src/pages/Profile.tsx
+  if (!profile || !profile.id) return <div>Profile not found</div>;
 
   return (
     <div className="max-w-2xl mx-auto py-6">

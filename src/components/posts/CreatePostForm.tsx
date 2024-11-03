@@ -2,14 +2,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/Button";
-import { useAuthStore } from "../../store/authStore";
+// import { useAuthStore } from "../../store/authStore";
 
 interface CreatePostFormData {
   content: string;
 }
 
 export const CreatePostForm: React.FC = () => {
-  const user = useAuthStore((state) => state.user);
+  // const user = useAuthStore((state) => state.user);
   const {
     register,
     handleSubmit,

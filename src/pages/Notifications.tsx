@@ -60,7 +60,14 @@ const NotificationItem: React.FC<{ notification: Notification }> = ({
 };
 
 const Notifications: React.FC = () => {
-  const { data: notifications, isLoading } = useQuery({
+  // const { data: notifications, isLoading } = useQuery({
+  //   queryKey: ["notifications"],
+  //   queryFn: async () => {
+  //     // This would be your API call
+  //     return [] as Notification[];
+  //   },
+  // });
+  const { data: notifications } = useQuery({
     queryKey: ["notifications"],
     queryFn: async () => {
       // This would be your API call

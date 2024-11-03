@@ -38,7 +38,11 @@ export const PostList: React.FC = () => {
       {MOCK_POSTS.map((post) => (
         <Card key={post.id} className="p-6">
           <div className="flex items-start gap-4">
-            <Avatar alt={post.author.name} src={post.author.avatar} />
+            {/* <Avatar alt={post.author.name} src={post.author.avatar} /> */}
+            <Avatar
+              alt={post.author.name}
+              src={post.author.avatar || undefined}
+            />
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">{post.author.name}</h3>
