@@ -1,0 +1,91 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Primary gradient -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Secondary gradient -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c2410c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer hexagon (shield shape) -->
+  <path d="M100 20 
+           L160 50 
+           L160 150 
+           L100 180 
+           L40 150 
+           L40 50 Z" 
+        fill="white" 
+        stroke="url(#primaryGradient)" 
+        stroke-width="3"/>
+
+  <!-- Stylized book pages -->
+  <path d="M70 60 
+           Q100 55, 130 60 
+           L130 140 
+           Q100 145, 70 140 Z" 
+        fill="none" 
+        stroke="url(#primaryGradient)" 
+        stroke-width="2"/>
+
+  <!-- DNA-like double helix (representing connection and growth) -->
+  <path d="M85 65 
+           Q100 75, 115 65 
+           Q100 85, 85 95
+           Q100 105, 115 95
+           Q100 115, 85 125
+           Q100 135, 115 125" 
+        fill="none" 
+        stroke="url(#secondaryGradient)" 
+        stroke-width="2" 
+        filter="url(#glow)"/>
+
+  <!-- Connection nodes -->
+  <circle cx="85" cy="65" r="3" fill="url(#secondaryGradient)"/>
+  <circle cx="115" cy="65" r="3" fill="url(#secondaryGradient)"/>
+  <circle cx="85" cy="95" r="3" fill="url(#secondaryGradient)"/>
+  <circle cx="115" cy="95" r="3" fill="url(#secondaryGradient)"/>
+  <circle cx="85" cy="125" r="3" fill="url(#secondaryGradient)"/>
+  <circle cx="115" cy="125" r="3" fill="url(#secondaryGradient)"/>
+
+  <!-- Stylized torch flame (knowledge) -->
+  <path d="M90 45
+           Q100 35, 110 45
+           Q100 50, 90 45" 
+        fill="url(#secondaryGradient)" 
+        filter="url(#glow)"/>
+
+  <!-- Text elements -->
+  <g transform="translate(0, 15)">
+    <text x="100" y="155" 
+          text-anchor="middle" 
+          font-family="Arial, sans-serif" 
+          font-weight="bold" 
+          font-size="18" 
+          fill="url(#primaryGradient)">
+      IIT CONNECT
+    </text>
+    <text x="100" y="170" 
+          text-anchor="middle" 
+          font-family="Arial, sans-serif" 
+          font-size="12" 
+          letter-spacing="2"
+          fill="#1e3a8a">
+      ROPAR
+    </text>
+  </g>
+</svg>
