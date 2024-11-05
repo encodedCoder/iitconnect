@@ -1,8 +1,8 @@
 // src/pages/Home.tsx
-import React from "react";
+// import React from "react";
 import { useAuthStore } from "../store/authStore";
 import { CreatePostForm } from "../components/posts/CreatePostForm";
-import { PostList } from "../components/posts/PostList";
+// import { PostList } from "../components/posts/PostList";
 import { Card } from "../components/ui/Card";
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
       {/* Posts Feed */}
       <div className="space-y-4">
         <h2 className="text-lg sm:text-xl font-semibold px-2">Recent Posts</h2>
-        <PostList />
+        {/* <PostList /> */}
       </div>
     </div>
   );

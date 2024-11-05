@@ -9,17 +9,29 @@ import { Spinner } from "../components/ui/Spinner";
 const Profile = () => {
   const { userId } = useParams<{ userId: string }>();
 
+  // const { data: profile, isLoading } = useQuery({
+  //   queryKey: ["profile", userId],
+  //   queryFn: async () => {
+  //     // This would be your API call
+  //     return {
+  //       id: userId,
+  //       name: "Test User",
+  //       bio: "This is a test bio",
+  //       followersCount: 100,
+  //       followingCount: 50,
+  //       isFollowing: false,
+  //     };
+  //   },
+  // });
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", userId],
     queryFn: async () => {
-      // This would be your API call
+      if (!userId) throw new Error("User ID is required");
       return {
         id: userId,
         name: "Test User",
-        bio: "This is a test bio",
-        followersCount: 100,
-        followingCount: 50,
-        isFollowing: false,
+        followersCount: 0,
+        followingCount: 0,
       };
     },
   });

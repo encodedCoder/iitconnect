@@ -1,7 +1,7 @@
 // src/components/profile/EditProfileModal.tsx
 import React from "react";
 import { Dialog } from "@headlessui/react";
-import { Button } from "../ui/Button";
+// import { Button } from "../ui/Button";
 import { EditProfileForm } from "./EditProfileForm";
 
 interface EditProfileModalProps {

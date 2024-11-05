@@ -11,9 +11,9 @@ export const useAuth = () => {
     loading,
     error,
     login: storeLogin,
-    register: storeRegister,
+    // register: storeRegister,
     logout: storeLogout,
-    updateProfile,
+    // updateProfile,
   } = useAuthStore();
 
   const login = useCallback(
@@ -29,18 +29,18 @@ export const useAuth = () => {
     [storeLogin, navigate]
   );
 
-  const register = useCallback(
-    async (email: string, password: string, name: string) => {
-      try {
-        await storeRegister(email, password, name);
-        navigate("/login");
-      } catch (error) {
-        console.error("Registration failed:", error);
-        throw error;
-      }
-    },
-    [storeRegister, navigate]
-  );
+  // const register = useCallback(
+  //   async (email: string, password: string, name: string) => {
+  //     try {
+  //       await storeRegister(email, password, name);
+  //       navigate("/login");
+  //     } catch (error) {
+  //       console.error("Registration failed:", error);
+  //       throw error;
+  //     }
+  //   },
+  //   [storeRegister, navigate]
+  // );
 
   const logout = useCallback(() => {
     storeLogout();
@@ -54,8 +54,8 @@ export const useAuth = () => {
     error,
     isAuthenticated: !!user && !!token,
     login,
-    register,
+    // register,
     logout,
-    updateProfile,
+    // updateProfile,
   };
 };
