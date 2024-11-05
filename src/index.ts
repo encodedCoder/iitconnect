@@ -16,4 +16,3 @@ export interface Post {
   comments: number;
 }
 
-export * from "./hooks";
