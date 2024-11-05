@@ -11,15 +11,30 @@ export const ProfilePage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
   const currentUser = useAuthStore((state) => state.user);
 
+  // const { data: profile, isLoading } = useQuery({
+  //   queryKey: ["profile", userId],
+  //   queryFn: async () => {
+  //     // Fetch profile data from API
+  //     return {
+  //       id: userId,
+  //       name: "Test User",
+  //       followersCount: 0,
+  //       followingCount: 0,
+  //     };
+  //   },
+  // });
+
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", userId],
     queryFn: async () => {
-      // Fetch profile data from API
+      if (!userId) throw new Error("User ID is required");
       return {
-        id: userId,
+        id: userId as string, // Add type assertion
         name: "Test User",
         followersCount: 0,
         followingCount: 0,
+        bio: "", // Add required fields
+        isFollowing: false,
       };
     },
   });
