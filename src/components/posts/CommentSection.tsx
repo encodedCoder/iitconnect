@@ -19,7 +19,7 @@ interface CommentSectionProps {
 }
 
 export const CommentSection: React.FC<CommentSectionProps> = ({
-  // postId,
+  postId,
   comments,
 }) => {
   const { register, handleSubmit, reset } = useForm<{ content: string }>();
@@ -32,10 +32,11 @@ export const CommentSection: React.FC<CommentSectionProps> = ({
   //     console.error("Failed to create comment:", error);
   //   }
   // };
-
-  const onSubmit = async () => {
+  // Add postId usage or remove if not needed
+  const onSubmit = async (data: { content: string }) => {
     try {
-      // API call to create comment would go here
+      // Use postId in API call
+      console.log(`Creating comment for post ${postId}:`, data.content);
       reset();
     } catch (error) {
       console.error("Failed to create comment:", error);

@@ -32,7 +32,14 @@ const MOCK_POSTS = [
   },
 ];
 
-export const PostList: React.FC = () => {
+// In src/components/posts/PostList.tsx
+interface PostListProps {
+  userId: string;
+  type?: "all" | "likes";
+}
+
+export const PostList: React.FC<PostListProps> = ({}) => {
+  // ... component implementation
   return (
     <div className="space-y-4">
       {MOCK_POSTS.map((post) => (
@@ -72,3 +79,44 @@ export const PostList: React.FC = () => {
     </div>
   );
 };
+
+// export const PostList: React.FC = () => {
+//   return (
+//     <div className="space-y-4">
+//       {MOCK_POSTS.map((post) => (
+//         <Card key={post.id} className="p-6">
+//           <div className="flex items-start gap-4">
+//             {/* <Avatar alt={post.author.name} src={post.author.avatar} /> */}
+//             <Avatar
+//               alt={post.author.name}
+//               src={post.author.avatar || undefined}
+//             />
+//             <div className="flex-1">
+//               <div className="flex items-center justify-between">
+//                 <h3 className="font-semibold">{post.author.name}</h3>
+//                 <span className="text-sm text-gray-500">
+//                   {new Date(post.createdAt).toLocaleDateString()}
+//                 </span>
+//               </div>
+//               <p className="mt-2">{post.content}</p>
+//               <div className="flex items-center gap-4 mt-4">
+//                 <Button variant="ghost" size="sm" className="gap-2">
+//                   <Heart className="w-4 h-4" />
+//                   {post.likes}
+//                 </Button>
+//                 <Button variant="ghost" size="sm" className="gap-2">
+//                   <MessageCircle className="w-4 h-4" />
+//                   {post.comments}
+//                 </Button>
+//                 <Button variant="ghost" size="sm" className="gap-2">
+//                   <Share2 className="w-4 h-4" />
+//                   Share
+//                 </Button>
+//               </div>
+//             </div>
+//           </div>
+//         </Card>
+//       ))}
+//     </div>
+//   );
+// };

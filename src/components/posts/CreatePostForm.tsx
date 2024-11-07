@@ -9,7 +9,6 @@ interface CreatePostFormData {
 }
 
 export const CreatePostForm: React.FC = () => {
-  // const user = useAuthStore((state) => state.user);
   const {
     register,
     handleSubmit,

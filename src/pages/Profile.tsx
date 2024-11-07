@@ -9,24 +9,35 @@ import { Spinner } from "../components/ui/Spinner";
 const Profile = () => {
   const { userId } = useParams<{ userId: string }>();
 
+  // const { data: profile, isLoading } = useQuery({
+  //   queryKey: ["profile", userId],
+  //   queryFn: async () => {
+  //     // This would be your API call
+  //     return {
+  //       id: userId,
+  //       name: "Test User",
+  //       bio: "This is a test bio",
+  //       followersCount: 100,
+  //       followingCount: 50,
+  //       isFollowing: false,
+  //     };
+  //   },
+  // });
   const { data: profile, isLoading } = useQuery({
     queryKey: ["profile", userId],
     queryFn: async () => {
-      // This would be your API call
+      if (!userId) throw new Error("User ID is required");
       return {
         id: userId,
         name: "Test User",
-        bio: "This is a test bio",
-        followersCount: 100,
-        followingCount: 50,
-        isFollowing: false,
+        followersCount: 0,
+        followingCount: 0,
       };
     },
   });
 
   if (isLoading) return <Spinner />;
-  // src/pages/Profile.tsx
-  if (!profile || !profile.id) return <div>Profile not found</div>;
+  if (!profile) return <div>Profile not found</div>;
 
   return (
     <div className="max-w-2xl mx-auto py-6">

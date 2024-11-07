@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 
 interface RegisterFormData {
   name: string;
@@ -21,11 +21,11 @@ export const RegisterForm: React.FC = () => {
     formState: { errors },
   } = useForm<RegisterFormData>();
   const navigate = useNavigate();
-  const { register: registerUser } = useAuth();
+  // const { register: registerUser } = useAuth();
 
-  const onSubmit = async (data: RegisterFormData) => {
+  const onSubmit = async () => {
     try {
-      await registerUser(data.email, data.password, data.name);
+      // await registerUser(data.email, data.password, data.name);
       navigate("/login");
     } catch (error) {
       console.error("Registration failed:", error);

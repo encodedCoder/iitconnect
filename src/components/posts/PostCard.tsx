@@ -1,6 +1,6 @@
 // src/components/posts/PostCard.tsx
 import React from "react";
-import { Post } from "../../types/";
+import { Post } from "../../index";
 import { Button } from "../ui/Button";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 

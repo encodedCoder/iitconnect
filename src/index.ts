@@ -1,4 +1,4 @@
-// src/types/index.ts
+// src/index.ts
 export interface User {
   id: string;
   email: string;
@@ -15,3 +15,4 @@ export interface Post {
   likes: number;
   comments: number;
 }
+
